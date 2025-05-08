@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "570468939849",
+    "project_id": "my-project-aa4d8",
+    "storage_bucket": "my-project-aa4d8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570468939849:android:81925c9a115adfbc3fe798",
+        "android_client_info": {
+          "package_name": "com.example.callerscreen"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAt2ugAa_XqUVVNp6x4jf3017F4IeAdM4Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

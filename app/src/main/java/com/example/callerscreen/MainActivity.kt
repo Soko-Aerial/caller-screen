@@ -6,7 +6,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.Navigation
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.example.callerscreen.ui.theme.CallerScreenTheme
 
 class MainActivity : ComponentActivity() {
@@ -16,7 +21,15 @@ class MainActivity : ComponentActivity() {
         setContent {
             CallerScreenTheme {
                 requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
-                com.example.sigtrack_call.Navigation()
+                    val navController = rememberNavController()
+
+                    NavHost(navController, startDestination = "home") {
+                        composable("home") { HomeScreen() }
+                        composable("navigation/{roomId}") { backStackEntry ->
+                            val id = backStackEntry.arguments?.getString("roomId")
+                            Navigation(roomId = id ?: "")
+                        }
+                    }
             }
         }
     }
@@ -26,6 +39,6 @@ class MainActivity : ComponentActivity() {
 @Preview
 @Composable
 private fun CallerScreen() {
-    com.example.sigtrack_call.Navigation()
+
 }
 

@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -54,6 +55,9 @@ dependencies {
     implementation(libs.androidx.camera.core)
     implementation(libs.androidx.camera.view)
     implementation(libs.androidx.camera.lifecycle)
+    implementation(libs.firebase.firestore.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.firebase.messaging.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -64,6 +68,13 @@ dependencies {
 //    implementation(project(":sigtrack-call"))
 
     implementation (libs.callerscreen)
+    implementation (libs.lottie.compose.v610)
 
+    //firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+
+    //webrtc
+    implementation (libs.android)
 }
 

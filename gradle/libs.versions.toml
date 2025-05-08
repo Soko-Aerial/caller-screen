@@ -1,10 +1,12 @@
 [versions]
 agp = "8.7.3"
+android = "125.6422.07"
 callerscreen = "1.0.1"
 cameraCoreVersion = "1.4.1"
 cameraLifecycleVersion = "1.4.1"
 cameraViewVersion = "1.4.1"
 dotlottieAndroid = "0.5.0"
+firebaseBom = "33.13.0"
 kotlin = "2.0.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -21,8 +23,11 @@ cameraView = "1.4.1"
 cameraLifecycle = "1.4.1"
 appcompat = "1.7.0"
 material = "1.12.0"
+firebaseFirestoreKtx = "25.1.4"
+firebaseMessagingKtx = "24.1.1"
 
 [libraries]
+android = { module = "io.github.webrtc-sdk:android", version.ref = "android" }
 androidx-camera-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "cameraCoreVersion" }
 #noinspection SimilarGradleDependency
 androidx-camera-core-v131 = { module = "androidx.camera:camera-core", version.ref = "cameraCoreVersion" }
@@ -33,6 +38,8 @@ androidx-camera-view-v131 = { module = "androidx.camera:camera-view", version.re
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 callerscreen = { module = "com.github.Soko-Aerial:CallerScreen", version.ref = "callerscreen" }
 dotlottie-android = { module = "com.github.LottieFiles:dotlottie-android", version.ref = "dotlottieAndroid" }
+firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -59,6 +66,8 @@ androidx-camera-view = { group = "androidx.camera", name = "camera-view", versio
 androidx-camera-lifecycle = { group = "androidx.camera", name = "camera-lifecycle", version.ref = "cameraLifecycle" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
+firebase-messaging-ktx = { group = "com.google.firebase", name = "firebase-messaging-ktx", version.ref = "firebaseMessagingKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
