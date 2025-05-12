@@ -37,14 +37,14 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import kotlinx.coroutines.launch
 import com.airbnb.lottie.compose.*
-import com.example.callerscreen.Permissions.RingtoneHandler
-import com.example.callerscreen.WebRTC.SignalingManager
-import com.example.callerscreen.WebRTC.WebRTCManager
+import com.example.callerscreen.permissions.RingtoneHandler
+import com.example.callerscreen.webRtc.SignalingManager
+import com.example.callerscreen.webRtc.WebRTCManager
 import com.example.sigtrack_calll.R
 
 
 @Composable
-fun CallScreen(navController: NavHostController) {
+fun CallScreen(roomId: String, callerName: String, navController: NavHostController) {
     RingtoneHandler()
     val coroutineScope = rememberCoroutineScope()
     var showResponses by remember { mutableStateOf(false) }
@@ -56,7 +56,7 @@ fun CallScreen(navController: NavHostController) {
     )
 
     // Initialize WebRTC Manager and SignalingManager
-    val roomId = "room_${System.currentTimeMillis()}"
+    val roomId = roomId
     val context = LocalContext.current
     WebRTCManager.init(context)
 
@@ -67,7 +67,7 @@ fun CallScreen(navController: NavHostController) {
     ) {
 
         Text(
-            "ALPHA KILO",
+            callerName,
             fontSize = 24.sp,
             color = Color(0xFF9A9A00),
             modifier = Modifier

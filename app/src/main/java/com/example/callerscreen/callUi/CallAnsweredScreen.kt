@@ -25,8 +25,8 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.NavHostController
-import com.example.callerscreen.Permissions.RequestPermissions
-import com.example.callerscreen.WebRTC.WebRTCManager
+import com.example.callerscreen.permissions.RequestPermissions
+import com.example.callerscreen.webRtc.WebRTCManager
 import com.example.sigtrack_calll.R
 import org.webrtc.SurfaceViewRenderer
 
@@ -95,8 +95,7 @@ import org.webrtc.SurfaceViewRenderer
 @Composable
 fun AnswerScreen(
     navController: NavHostController,
-    roomId: String,
-    isCaller: Boolean // Pass whether this screen is for the caller or receiver
+    roomId: String
 ) {
     // Remember the lifecycle of your activity
     val context = LocalContext.current
@@ -110,7 +109,7 @@ fun AnswerScreen(
         WebRTCManager.init(context)
         WebRTCManager.setSurfaceViews(localRenderer, remoteRenderer)
         WebRTCManager.startLocalVideo()
-        WebRTCManager.joinCall(roomId, isCaller)
+        WebRTCManager.joinCall(roomId)
     }
 
     // Handle UI layout for the screen
@@ -234,7 +233,7 @@ fun CameraButton(cameraSelectorState: MutableState<CameraSelector>) {
 
 
 @Composable
-fun EndCall(modifier: Modifier = Modifier, onClick: () -> Unit) {
+fun EndCall(onClick: () -> Unit) {
     CircularButton(
         icon = R.drawable.call2,
         backgroundColor = Color.LightGray,

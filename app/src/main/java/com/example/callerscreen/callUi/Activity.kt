@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.compose.rememberNavController
-import com.example.callerscreen.WebRTC.WebRTCManager
+import com.example.callerscreen.webRtc.WebRTCManager
 import org.webrtc.SurfaceViewRenderer
 
 class CallActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.example.callerscreen.Permissions
+package com.example.callerscreen.permissions
 
 import android.Manifest
 import android.widget.Toast
@@ -19,4 +19,6 @@ fun RequestPermissions() {
             }
         }
     LaunchedEffect(Unit) { launcher.launch(permissions) }
+
+
 }

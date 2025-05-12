@@ -70,11 +70,13 @@ dependencies {
     implementation (libs.callerscreen)
     implementation (libs.lottie.compose.v610)
 
-    //firebase
+    // Import the Firebase BoM
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
 
+    implementation (libs.androidx.room.runtime)
     //webrtc
     implementation (libs.android)
+    implementation (libs.okhttp)
 }
 

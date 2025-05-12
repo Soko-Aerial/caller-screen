@@ -1,4 +1,4 @@
-package com.example.callerscreen.WebRTC
+package com.example.callerscreen.webRtc
 
 import android.annotation.SuppressLint
 import com.google.firebase.firestore.FirebaseFirestore
