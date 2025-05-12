@@ -19,7 +19,7 @@ class CallActivity : AppCompatActivity() {
         setContent {
             val roomId = "roomIdFromServer" // Retrieve roomId dynamically
             val isCaller = true // or false, depending on the user
-            AnswerScreen(navController = rememberNavController(), roomId = roomId, isCaller = isCaller)
+            AnswerScreen(navController = rememberNavController(), roomId = roomId)
         }
     }
 
