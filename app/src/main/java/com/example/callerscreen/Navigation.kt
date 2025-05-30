@@ -1,6 +1,7 @@
 package com.example.callerscreen
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -10,13 +11,14 @@ import com.example.callerscreen.callUi.AnswerScreen
 import com.example.callerscreen.callUi.CallScreen
 
 @Composable
-fun Navigation(
-    roomId: String
+fun Call(
+    //roomId: String
+    navController: NavHostController
 ) {
-    val navController = rememberNavController()
+//    val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = "callScreen") {
-        composable("callScreen") { CallScreen(navController) }
+
         composable(
             "incoming_call_screen/{roomId}/{callerName}",
             arguments = listOf(
@@ -29,5 +31,17 @@ fun Navigation(
             CallScreen(roomId = roomId, callerName = callerName, navController = navController)
         }
 
+        composable(
+            "answer_screen/{roomId}/{callerName}",
+            arguments = listOf(
+                navArgument("roomId") { type = NavType.StringType },
+                navArgument("callerName") { type = NavType.StringType }
+            )
+        ) { backStackEntry ->
+            val roomId = backStackEntry.arguments?.getString("roomId") ?: ""
+            val callerName = backStackEntry.arguments?.getString("callerName") ?: "Unknown"
+            AnswerScreen(roomId = roomId, callerName = callerName, navController = navController)
+        }
     }
+
 }

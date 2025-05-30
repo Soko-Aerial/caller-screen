@@ -31,20 +31,22 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
-import kotlinx.coroutines.launch
+import androidx.navigation.compose.rememberNavController
 import com.airbnb.lottie.compose.*
-import com.example.callerscreen.permissions.RingtoneHandler
-import com.example.callerscreen.webRtc.SignalingManager
-import com.example.callerscreen.webRtc.WebRTCManager
-import com.example.sigtrack_calll.R
+import com.example.callerscreen.RingtoneHandler
+import com.example.callerscreen.SignalingManager
+import com.example.callerscreen.WebRTCManager
+import kotlinx.coroutines.launch
+import com.example.callerscreen.R
 
 
 @Composable
-fun CallScreen(roomId: String, callerName: String, navController: NavHostController) {
+fun CallScreen(roomId: String, callerName: String, navController: NavController) {
     RingtoneHandler()
     val coroutineScope = rememberCoroutineScope()
     var showResponses by remember { mutableStateOf(false) }
@@ -56,7 +58,6 @@ fun CallScreen(roomId: String, callerName: String, navController: NavHostControl
     )
 
     // Initialize WebRTC Manager and SignalingManager
-    val roomId = roomId
     val context = LocalContext.current
     WebRTCManager.init(context)
 
@@ -262,4 +263,14 @@ fun PredefinedMessageDialog(
             }
         }
     )
+}
+
+
+@Preview
+@Composable
+private fun Incoming() {
+
+    val navController: NavHostController = rememberNavController()
+    val roomId = "112"
+    CallScreen(roomId = roomId, callerName = "Ama", navController)
 }

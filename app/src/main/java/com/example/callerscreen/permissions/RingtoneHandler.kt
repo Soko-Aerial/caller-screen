@@ -1,4 +1,4 @@
-package com.example.callerscreen.permissions
+package com.example.callerscreen
 
 import android.annotation.SuppressLint
 import android.content.BroadcastReceiver

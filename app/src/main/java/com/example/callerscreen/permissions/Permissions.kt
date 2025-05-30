@@ -1,4 +1,4 @@
-package com.example.callerscreen.permissions
+package com.example.callerscreen
 
 import android.Manifest
 import android.widget.Toast
@@ -22,3 +22,4 @@ fun RequestPermissions() {
 
 
 }
+

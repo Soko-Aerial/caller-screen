@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "570468939849",
-    "project_id": "my-project-aa4d8",
-    "storage_bucket": "my-project-aa4d8.firebasestorage.app"
+    "project_number": "253135859866",
+    "project_id": "call-e1d93",
+    "storage_bucket": "call-e1d93.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:570468939849:android:81925c9a115adfbc3fe798",
+        "mobilesdk_app_id": "1:253135859866:android:7b973cfb9d8015ba286f23",
         "android_client_info": {
           "package_name": "com.example.callerscreen"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAt2ugAa_XqUVVNp6x4jf3017F4IeAdM4Q"
+          "current_key": "AIzaSyDzqwgO0kQ8IZfia33V0pOXzjxPrt6jr2s"
         }
       ],
       "services": {

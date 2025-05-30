@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.compose.rememberNavController
-import com.example.callerscreen.webRtc.WebRTCManager
+import com.example.callerscreen.WebRTCManager
 import org.webrtc.SurfaceViewRenderer
 
 class CallActivity : AppCompatActivity() {
@@ -18,8 +18,8 @@ class CallActivity : AppCompatActivity() {
         // Set content view
         setContent {
             val roomId = "roomIdFromServer" // Retrieve roomId dynamically
-            val isCaller = true // or false, depending on the user
-            AnswerScreen(navController = rememberNavController(), roomId = roomId)
+            val callerName = ""
+            AnswerScreen(navController = rememberNavController(), callerName = callerName,roomId = roomId)
         }
     }
 
